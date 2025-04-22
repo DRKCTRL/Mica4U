@@ -108,7 +108,9 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <details>
 <summary><strong>Method 1: Installer (Recommended)</strong></summary>
 
-1. Download the latest installer from the [Releases](https://github.com/DRKCTRL/Mica4U/releases) page  
+1. Download the latest installer from the [Releases](https://github.com/DRKCTRL/Mica4U/releases) page
+   - Choose `Mica4U_Setup_x64.exe` for 64-bit Windows (recommended for most users)
+   - Choose `Mica4U_Setup_x86.exe` for 32-bit Windows
 2. Run the installer and follow the instructions  
 3. Launch from the Start Menu or Desktop shortcut  
 
@@ -117,13 +119,20 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <details>
 <summary><strong>Method 2: Portable</strong></summary>
 
-1. Download the ZIP from the [Releases](https://github.com/DRKCTRL/Mica4U/releases) page  
+1. Download the ZIP from the [Releases](https://github.com/DRKCTRL/Mica4U/releases) page
+   - Choose `Mica4U_portable_x64.zip` for 64-bit Windows (recommended for most users)
+   - Choose `Mica4U_portable_x86.zip` for 32-bit Windows  
 2. Extract to any location  
 3. Run `Mica4U.exe`  
 
 </details>
 
 > **Note**: Both methods require admin rights.
+>
+> **Which version should I choose?**  
+> - If you're using a modern computer with Windows 10/11, choose the x64 version
+> - If you're using an older computer or a 32-bit version of Windows, choose the x86 version
+> - If you're unsure, right-click on "This PC" or "My Computer", select "Properties", and check your "System type"
 
 ---
 
@@ -227,11 +236,25 @@ pip install -r requirements.txt
 ```
 
 1. Install [Inno Setup 6](https://jrsoftware.org/isdl.php)  
-2. Run:
+2. Run one of the following commands:
 
 ```bash
+# Build both x86 and x64 versions (default)
 ./build.cmd
+
+# Build only x64 version
+./build.cmd --x64
+
+# Build only x86 version
+./build.cmd --x86
+
+# Build with verbose output
+./build.cmd --verbose
 ```
+
+3. The output files will be in the `compiled/output` directory:
+   - Installers: `Mica4U_Setup_x64.exe` and/or `Mica4U_Setup_x86.exe`
+   - Portable: `Mica4U_portable_x64.zip` and/or `Mica4U_portable_x86.zip`
 
 </details>
 
@@ -239,8 +262,15 @@ pip install -r requirements.txt
 <summary><strong>Manual Build (Not Recommended)</strong></summary>
 
 ```bash
+# For x64 build
+set TARGET_ARCH=x64
 pyinstaller compiled/Mica4U.spec
-"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "compiled\installer.iss"
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "compiled\installer.iss" /DArch="x64"
+
+# For x86 build
+set TARGET_ARCH=x86
+pyinstaller compiled/Mica4U.spec
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "compiled\installer.iss" /DArch="x86"
 ```
 
 </details>

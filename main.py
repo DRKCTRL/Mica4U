@@ -3,7 +3,7 @@ from pathlib import Path
 from functools import wraps
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGroupBox, QRadioButton, 
     QCheckBox, QLabel, QSlider, QPushButton, QFrame, QComboBox, QGridLayout, QDialog, QMessageBox, 
-    QInputDialog, QButtonGroup, QColorDialog, QTextBrowser)
+    QInputDialog, QButtonGroup, QColorDialog, QTextBrowser, QProgressDialog)
 from PyQt6.QtCore import Qt, QUrl, QTimer, QThread, pyqtSignal
 from PyQt6.QtGui import QIcon, QDesktopServices, QColor
 import qtawesome as qta
@@ -26,7 +26,7 @@ class ClickableLabel(QLabel):
         self.doubleClicked.emit()
         super().mouseDoubleClickEvent(event)
 
-VERSION = "1.6.8"
+VERSION = "1.6.9"
 STANDARD_HEIGHT = 30
 STANDARD_SPACING = 5
 
@@ -1323,7 +1323,20 @@ class UpdateDialog(QDialog):
         release_date = self.update_info.get("published_at", "").split("T")[0]
         if release_date: layout.addWidget(QLabel(f"<b>Release date:</b> {release_date}"))
 
-        layout.addWidget(QLabel("<b>Release Notes:</b>"))
+        notes_header_layout = QHBoxLayout()
+        notes_header_layout.addWidget(QLabel("<b>Release Notes:</b>"))
+        notes_header_layout.addStretch()
+        
+        # Add GitHub link button
+        github_btn = QPushButton("View on GitHub")
+        github_btn.setIcon(qta.icon("fa5b.github"))
+        github_btn.clicked.connect(lambda: webbrowser.open(self.update_info["html_url"]))
+        github_btn.setToolTip("Open the release page on GitHub")
+        github_btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        notes_header_layout.addWidget(github_btn)
+        
+        layout.addLayout(notes_header_layout)
+        
         release_notes = QTextBrowser()
         release_notes.setMinimumHeight(200)
 
@@ -1351,15 +1364,116 @@ class UpdateDialog(QDialog):
     
     def download_update(self):
         try:
-            webbrowser.open(self.update_info["html_url"])
-            self.accept()
+            # Determine system architecture
+            is_64bit = platform.machine().endswith('64')
+            arch_suffix = "x64" if is_64bit else "x86"
+            
+            # Find the right asset from the release assets
+            assets = self.update_info.get("assets", [])
+            installer_asset = None
+            for asset in assets:
+                if f"Mica4U_Setup_{arch_suffix}.exe" in asset.get("name", ""):
+                    installer_asset = asset
+                    break
+            
+            if not installer_asset:
+                # Fallback to release page if specific asset not found
+                QMessageBox.information(
+                    self,
+                    "Download Update",
+                    f"Could not find the specific {arch_suffix} installer. Opening the releases page instead."
+                )
+                webbrowser.open(self.update_info["html_url"])
+                self.accept()
+                return
+            
+            # Get download URL and size
+            download_url = installer_asset.get("browser_download_url")
+            file_size = installer_asset.get("size", 0)
+            file_size_mb = file_size / (1024 * 1024)
+            
+            # Ask for confirmation with file info
+            msg_box = QMessageBox(self)
+            msg_box.setWindowTitle("Download Update")
+            msg_box.setText(f"Ready to download Mica4U v{self.update_info.get('tag_name', '').replace('v', '')} ({arch_suffix}).")
+            msg_box.setInformativeText(f"File size: {file_size_mb:.1f} MB\n\nDo you want to continue?")
+            msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            msg_box.setDefaultButton(QMessageBox.StandardButton.Yes)
+            response = msg_box.exec()
+            
+            if response != QMessageBox.StandardButton.Yes:
+                return
+            
+            # Create progress dialog
+            progress = QProgressDialog("Downloading update...", "Cancel", 0, 100, self)
+            progress.setWindowTitle("Downloading Update")
+            progress.setWindowModality(Qt.WindowModality.WindowModal)
+            progress.setMinimumDuration(0)
+            progress.setValue(0)
+            
+            # Create temporary directory
+            temp_dir = tempfile.gettempdir()
+            filename = os.path.join(temp_dir, f"Mica4U_Setup_{arch_suffix}.exe")
+            
+            # Download file with progress updates
+            def update_progress(block_num, block_size, total_size):
+                downloaded = block_num * block_size
+                if total_size > 0:
+                    percent = min(100, int(downloaded * 100 / total_size))
+                    progress.setValue(percent)
+                    if progress.wasCanceled():
+                        raise Exception("Download canceled by user")
+            
+            try:
+                urllib.request.urlretrieve(download_url, filename, update_progress)
+                progress.setValue(100)
+                
+                # Ask user if they want to run the installer now
+                if QMessageBox.question(
+                    self,
+                    "Download Complete",
+                    f"Update downloaded successfully to:\n{filename}\n\nDo you want to run the installer now?",
+                    QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+                ) == QMessageBox.StandardButton.Yes:
+                    
+                    # Run the installer
+                    if os.path.exists(filename):
+                        os.startfile(filename)
+                        # Close the application to allow the installer to run
+                        QApplication.quit()
+                    else:
+                        QMessageBox.warning(
+                            self,
+                            "Error",
+                            f"Installer file not found: {filename}"
+                        )
+                
+                self.accept()
+                
+            except Exception as e:
+                logger.error(f"Error during download: {str(e)}")
+                QMessageBox.critical(
+                    self,
+                    "Download Error",
+                    f"An error occurred during download: {str(e)}"
+                )
+                # Delete partial download if it exists
+                if os.path.exists(filename):
+                    try:
+                        os.remove(filename)
+                    except:
+                        pass
+                progress.close()
+                
         except Exception as e:
-            logger.error(f"Error opening update URL: {str(e)}")
+            logger.error(f"Error in download update: {str(e)}")
             QMessageBox.critical(
                 self,
                 "Error",
-                f"Could not open the download page. Please visit manually:\n{self.update_info.get('html_url', '')}"
+                f"Could not download the update: {str(e)}\n\nPlease visit manually:\n{self.update_info.get('html_url', '')}"
             )
+            webbrowser.open(self.update_info["html_url"])
+            self.accept()
 
 class MainWindow(QMainWindow):
     def __init__(self):

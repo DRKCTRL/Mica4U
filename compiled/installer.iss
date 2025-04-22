@@ -1,8 +1,13 @@
 #define MyAppName "Mica4U"
-#define MyAppVersion "1.6.8"
+#define MyAppVersion "1.6.9"
 #define MyAppPublisher "DRK"
 #define MyAppURL "https://github.com/DRKCTRL/Mica4U"
 #define MyAppExeName "Mica4U.exe"
+
+; Check for Architecture definition from build script, default to x64
+#ifndef Arch
+  #define Arch "x64"
+#endif
 
 [Setup]
 AppId={{2B04C122-1A7E-4BB8-95AB-E2C414D1742C}}
@@ -17,7 +22,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=..\LICENSE
 OutputDir=output
-OutputBaseFilename=Mica4U_Setup
+OutputBaseFilename=Mica4U_Setup_{#Arch}
 SetupIconFile=..\icon.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 UninstallDisplayName={#MyAppName}
@@ -27,6 +32,12 @@ WizardStyle=modern
 PrivilegesRequired=admin
 CloseApplications=yes
 UninstallRestartComputer=no
+
+; Set architecture based on build command
+#if Arch == "x64"
+  ArchitecturesAllowed=x64
+  ArchitecturesInstallIn64BitMode=x64
+#endif
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

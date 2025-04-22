@@ -1,6 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
+import sys
 
 block_cipher = None
+
+# Get target architecture from environment variable
+target_arch = os.environ.get('TARGET_ARCH', None)
 
 a = Analysis(
     ['..\\main.py'],
@@ -42,7 +47,7 @@ exe = EXE(
     runtime_tmpdir=None,
     console=False,
     disable_windowed_traceback=False,
-    target_arch=None,
+    target_arch=target_arch,
     codesign_identity=None,
     entitlements_file=None,
     icon='..\\icon.ico',

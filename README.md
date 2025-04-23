@@ -5,9 +5,9 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <div align="center">
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)  
-[![GitHub release](https://img.shields.io/github/v/release/DRKCTRL/Mica4U)](https://github.com/DRKCTRL/Mica4U/releases)
-[![Downloads](https://img.shields.io/github/downloads/DRKCTRL/Mica4U/total)](https://github.com/DRKCTRL/Mica4U/releases)
-[![Issues](https://img.shields.io/github/issues/DRKCTRL/Mica4U)](https://github.com/DRKCTRL/Mica4U/issues)
+[![GitHub release](https://img.shields.io/github/v/release/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases)
+[![Downloads](https://img.shields.io/github/downloads/DRKCTRL/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases)
+[![Issues](https://img.shields.io/github/issues/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/issues)
 
 </div>
 
@@ -108,7 +108,7 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <details>
 <summary><strong>Method 1: Installer (Recommended)</strong></summary>
 
-1. Download the latest installer from the [Releases](https://github.com/DRKCTRL/Mica4U/releases) page
+1. Download the latest installer from the [Releases](https://github.com/DRKCTRLDEV/Mica4U/releases) page
    - Choose `Mica4U_Setup_x64.exe` for 64-bit Windows (recommended for most users)
    - Choose `Mica4U_Setup_x86.exe` for 32-bit Windows
 2. Run the installer and follow the instructions  
@@ -119,7 +119,7 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <details>
 <summary><strong>Method 2: Portable</strong></summary>
 
-1. Download the ZIP from the [Releases](https://github.com/DRKCTRL/Mica4U/releases) page
+1. Download the ZIP from the [Releases](https://github.com/DRKCTRLDEV/Mica4U/releases) page
    - Choose `Mica4U_portable_x64.zip` for 64-bit Windows (recommended for most users)
    - Choose `Mica4U_portable_x86.zip` for 32-bit Windows  
 2. Extract to any location  
@@ -230,7 +230,7 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 ### ⚙️ Build Steps
 
 ```bash
-git clone https://github.com/DRKCTRL/Mica4U.git
+git clone https://github.com/DRKCTRLDEV/Mica4U.git
 cd Mica4U
 pip install -r requirements.txt
 ```
@@ -283,5 +283,5 @@ pyinstaller compiled/Mica4U.spec
 - Built with Python, PyQt6, and PyInstaller  
 - Icons by [Font Awesome](https://fontawesome.com)
 - Core Functionality by [MapleSpe](https://github.com/Maplespe)
-- GUI and Automation by [←{ 𝓓𝓡𝓚 }→](https://github.com/DRKCTRL)
-- Website also by [←{ 𝓓𝓡𝓚 }→](https://github.com/DRKCTRL)
+- GUI and Automation by [←{ 𝓓𝓡𝓚 }→](https://github.com/DRKCTRLDEV)
+- Website also by [←{ 𝓓𝓡𝓚 }→](https://github.com/DRKCTRLDEV)

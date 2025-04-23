@@ -1050,7 +1050,7 @@ class SettingsDialog(QDialog):
         dev_icon_label.setPixmap(qta.icon("fa5s.code", color=icon_color).pixmap(16, 16))
         devs_layout.addWidget(dev_icon_label)
         
-        devs_links = QLabel('GUI by <a href="https://github.com/DRKCTRL">DRK</a>, Core by <a href="https://github.com/Maplespe">Maplespe</a>')
+        devs_links = QLabel('GUI by <a href="https://github.com/DRKCTRLDEV">DRK</a>, Core by <a href="https://github.com/Maplespe">Maplespe</a>')
         devs_links.setOpenExternalLinks(True)
         devs_layout.addWidget(devs_links)
         devs_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)

@@ -1,7 +1,7 @@
 #define MyAppName "Mica4U"
 #define MyAppVersion "1.6.9"
 #define MyAppPublisher "DRK"
-#define MyAppURL "https://github.com/DRKCTRL/Mica4U"
+#define MyAppURL "https://github.com/DRKCTRLDEV/Mica4U"
 #define MyAppExeName "Mica4U.exe"
 
 ; Check for Architecture definition from build script, default to x64

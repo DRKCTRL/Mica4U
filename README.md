@@ -1,13 +1,12 @@
-# 🎨 Mica4U
+<h1 align="center">
+<img src="Mica4UHeader.png" alt="Mica4U" width="256">
+</h1>
 
 A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows Explorer — for Windows 10 and 11.
 
 <div align="center">
 
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)  
-[![GitHub release](https://img.shields.io/github/v/release/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases)
-[![Downloads](https://img.shields.io/github/downloads/DRKCTRL/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases)
-[![Issues](https://img.shields.io/github/issues/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/issues)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![GitHub release](https://img.shields.io/github/v/release/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Downloads](https://img.shields.io/github/downloads/DRKCTRL/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Issues](https://img.shields.io/github/issues/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/issues)
 
 </div>
 

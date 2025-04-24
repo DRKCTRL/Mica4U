@@ -283,4 +283,3 @@ pyinstaller compiled/Mica4U.spec
 - Icons by [Font Awesome](https://fontawesome.com)
 - Core Functionality by [MapleSpe](https://github.com/Maplespe)
 - GUI and Automation by [←{ 𝓓𝓡𝓚 }→](https://github.com/DRKCTRLDEV)
-- Website also by [←{ 𝓓𝓡𝓚 }→](https://github.com/DRKCTRLDEV)

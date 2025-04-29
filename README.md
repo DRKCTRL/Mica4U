@@ -6,7 +6,7 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 
 <div align="center">
 
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![GitHub release](https://img.shields.io/github/v/release/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Downloads](https://img.shields.io/github/downloads/DRKCTRL/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Issues](https://img.shields.io/github/issues/DRKCTRL/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/issues)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![GitHub release](https://img.shields.io/github/v/release/DRKCTRLDEV/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Downloads](https://img.shields.io/github/downloads/DRKCTRLDEV/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Issues](https://img.shields.io/github/issues/DRKCTRLDEV/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/issues)
 
 </div>
 
@@ -62,16 +62,16 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <summary><strong>View App Screenshots</strong></summary>
 
 ### Mica4U - General UI
-![M4UGeneralUI](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/Mica4UGeneral.png)
+![M4UGeneralUI](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/Mica4UGeneral.png)
 
 ### Mica4U - ColourPicker UI
-![M4UColourPickerUI](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/Mica4UColourPicker.png)
+![M4UColourPickerUI](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/Mica4UColourPicker.png)
 
 ### Mica4U - Settings UI
-![M4USettingsUI](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/Mica4USettings.png)
+![M4USettingsUI](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/Mica4USettings.png)
 
 ### Mica4U - UpdateDialog UI
-![M4UUpdateDialogUI](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/Mica4UUpdateDialog.png)
+![M4UUpdateDialogUI](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/Mica4UUpdateDialog.png)
 
 </details>
 
@@ -79,16 +79,16 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 <summary><strong>View Explorer Screenshots</strong></summary>
 
 ### Acrylic (Win11) (Dark Preset)
-![AcrylicWin11Dark](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/AcrylicWin11Dark.png)
+![AcrylicWin11Dark](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/AcrylicWin11Dark.png)
 
 ### Blur (Win11) (Dark Preset)
-![BlurWin11Dark](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/BlurWin11Dark.png)
+![BlurWin11Dark](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/BlurWin11Dark.png)
 
 ### Mica (Win11) (Dark Preset)
-![MicaWin11Dark](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/MicaWin11Dark.png)
+![MicaWin11Dark](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/MicaWin11Dark.png)
 
 ### Mica Alt (Win11) (Dark Preset)
-![MicaAltWin11Dark](https://raw.githubusercontent.com/DRKCTRL/Mica4U/main/screenshots/MicaAltWin11Dark.png)
+![MicaAltWin11Dark](https://raw.githubusercontent.com/DRKCTRLDEV/Mica4U/main/screenshots/MicaAltWin11Dark.png)
 
 </details>
 

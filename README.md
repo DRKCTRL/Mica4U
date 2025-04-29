@@ -6,7 +6,7 @@ A modern, user-friendly tool to apply Mica, Acrylic, and Blur effects to Windows
 
 <div align="center">
 
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![GitHub release](https://img.shields.io/github/v/release/DRKCTRLDEV/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Downloads](https://img.shields.io/github/downloads/DRKCTRLDEV/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Issues](https://img.shields.io/github/issues/DRKCTRLDEV/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/issues)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0) [![GitHub release](https://img.shields.io/github/v/release/DRKCTRLDEV/Mica4U)](https://github.com/DRKCTRLDEV/Mica4U/releases) [![Downloads](https://img.shields.io/github/downloads/DRKCTRLDEV/Mica4U/total)](https://github.com/DRKCTRLDEV/Mica4U/releases) ![Last Commit](https://img.shields.io/github/last-commit/DRKCTRLDEV/Mica4U)
 
 </div>
 

@@ -14,9 +14,9 @@ env/
 *.manifest
 *.spec
 installer/
-compiled/*
-!compiled/installer.iss
-!compiled/Mica4U.spec
+build/*
+!build/installer.iss
+!build/Mica4U.spec
 
 # IDE specific files
 .idea/
@@ -35,4 +35,4 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Project specific
-generate_requirements.py
+utils/

@@ -30,8 +30,8 @@ Mica4U is a user-friendly PyQt6-based interface for Maplespe's ExplorerBlurMica 
 <h2 align=center>Screenshots</h2>
   <img src="assets/screenshots/Explorer/Windows11/Dark/Acrylic.png">
   <img src="assets/screenshots/Explorer/Windows11/Light/Acrylic.png">
-  <details>
-    <summary align=center><u>View More Screenshots</u></summary>
+  <details align=center>
+    <summary><u>View More Screenshots</u></summary>
     <img src="assets/screenshots/Explorer/Windows11/Dark/Mica.png">
     <img src="assets/screenshots/Explorer/Windows11/Light/Mica.png">
     <img src="assets/screenshots/Explorer/Windows11/Dark/MicaAlt.png">

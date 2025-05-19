@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/Mica4U (Header).png" alt="Mica4U" width="100%"></p>
+<p align="center"><img src="assets/Mica4U (Header).png" alt="Mica4U"></p>
 <p align="center">
   <a href="https://www.gnu.org/licenses/lgpl-3.0"><img src="https://img.shields.io/badge/License-LGPL_v3-blue.svg?style=flat-rounded" alt="License: LGPL v3"></a>
   <a href="https://github.com/DRKCTRLDEV/Mica4U/releases"><img src="https://img.shields.io/github/v/release/DRKCTRLDEV/Mica4U.svg?style=flat-rounded" alt="GitHub release"></a>
